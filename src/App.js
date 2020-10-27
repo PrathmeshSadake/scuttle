@@ -3,6 +3,7 @@ import { Switch , Route } from 'react-router-dom';
 import './App.css';
 
 import HomePage from './pages/homepage/homepage.component.jsx';
+import ShopPage from './pages/shop/shop.component';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
      <Switch>
         {/* exact={ false } to keep exact as false default value is true */}
       <Route exact path='/' component={HomePage}/>
+      <Route path='/shop' component={ShopPage}/>
      </Switch>
     </div>
   );
