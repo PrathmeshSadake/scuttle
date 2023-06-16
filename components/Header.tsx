@@ -7,9 +7,9 @@ import { toast } from "react-hot-toast";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 
+import Button from "./Button";
 import useAuthModal from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
-import Button from "./Button";
 
 interface HeaderProps {
   children: React.ReactNode;
