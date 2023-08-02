@@ -4,7 +4,9 @@ import { Poppins } from "next/font/google";
 
 import Sidebar from "@/components/Sidebar";
 import UserProvider from "@/providers/UserProvider";
+import ToasterProvider from "@/providers/ToasterProvider";
 import SupabaseProvider from "@/providers/SupabaseProvider";
+import ModalProvider from "@/providers/ModalProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,8 +26,10 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={poppins.className}>
+        <ToasterProvider />
         <SupabaseProvider>
           <UserProvider>
+            <ModalProvider />
             <Sidebar>{children}</Sidebar>
           </UserProvider>
         </SupabaseProvider>
