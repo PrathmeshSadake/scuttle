@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
 import Sidebar from "@/components/Sidebar";
+import UserProvider from "@/providers/UserProvider";
 import SupabaseProvider from "@/providers/SupabaseProvider";
 
 const poppins = Poppins({
@@ -24,7 +25,9 @@ export default function RootLayout({
     <html lang='en'>
       <body className={poppins.className}>
         <SupabaseProvider>
-          <Sidebar>{children}</Sidebar>
+          <UserProvider>
+            <Sidebar>{children}</Sidebar>
+          </UserProvider>
         </SupabaseProvider>
       </body>
     </html>
